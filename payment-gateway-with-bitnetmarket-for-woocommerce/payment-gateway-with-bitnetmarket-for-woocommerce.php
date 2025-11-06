@@ -2,7 +2,7 @@
 /*
 Plugin Name: Payment Gateway with BitnetMarket for WooCommerce
 Plugin URI: https://github.com/znxn7717/payment-gateway-with-bitnetmarket-for-woocommerce
-Description: The BitnetMarket payment gateway adds the ability to accept cryptocurrency payments to your store simply and securely. With this plugin, you can enable various cryptocurrencies as a payment method on your site and provide your customers with a modern, fast, and borderless shopping experience. درگاه پرداخت بیت‌نت‌مارکت امکان پذیرش پرداخت‌های رمزارزی را به سادگی و امنیت به shdj شما اضافه می‌کند. با استفاده از این افزونه می‌توانید رمزارزهای مختلف را به عنوان روش پرداخت در سایت خود فعال کرده و تجربه خریدی مدرن، سریع و بدون مرز برای مشتریان‌تان فراهم کنید
+Description: The BitnetMarket payment gateway adds the ability to accept cryptocurrency payments to your store simply and securely. With this plugin, you can enable various cryptocurrencies as a payment method on your site and provide your customers with a modern, fast, and borderless shopping experience. درگاه پرداخت بیت‌نت‌مارکت امکان پذیرش پرداخت‌های رمزارزی را به سادگی و امنیت به فروشگاه شما اضافه می‌کند. با استفاده از این افزونه می‌توانید رمزارزهای مختلف را به عنوان روش پرداخت در سایت خود فعال کرده و تجربه خریدی مدرن، سریع و بدون مرز برای مشتریان‌تان فراهم کنید
 Version: 1.0.0
 Author: znxn7717
 Requires Plugins: woocommerce
@@ -54,6 +54,6 @@ function bitnetmarket_register_payment_method_type() {
 add_action('admin_notices', 'bitnetmarket_woocommerce_missing_notice');
 function bitnetmarket_woocommerce_missing_notice() {
     if (!class_exists('WC_Payment_Gateway')) {
-        echo '<div class="error notice"><p>' . esc_html(__('افزونه "درگاه پرداخت بیت‌نت‌مارکت برای ووکامرس" نیاز به نصب و فعال بودن ووکامرس دارد', 'bitnetmarket-payment-gateway-for-woocommerce')) . '</p></div>';
+        echo '<div class="error notice"><p>' . esc_html(__('افزونه "درگاه پرداخت بیت‌نت‌مارکت برای ووکامرس" نیاز به نصب و فعال بودن ووکامرس دارد', 'payment-gateway-with-bitnetmarket-for-woocommerce')) . '</p></div>';
     }
 }

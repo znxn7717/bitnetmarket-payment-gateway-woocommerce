@@ -13,8 +13,8 @@ if (class_exists('WC_Payment_Gateway') && !class_exists('WC_Gateway_Bitnetmarket
 
         public function __construct() {
             $this->id = 'bitnetmarket';
-            $this->method_title = __('بیت‌نت‌مارکت', 'bitnetmarket-payment-gateway-for-woocommerce');
-            $this->method_description = __('تنظیمات درگاه پرداخت بیت‌نت‌مارکت برای ووکامرس', 'bitnetmarket-payment-gateway-for-woocommerce');
+            $this->method_title = __('بیت‌نت‌مارکت', 'payment-gateway-with-bitnetmarket-for-woocommerce');
+            $this->method_description = __('تنظیمات درگاه پرداخت بیت‌نت‌مارکت برای ووکامرس', 'payment-gateway-with-bitnetmarket-for-woocommerce');
             $this->icon = apply_filters('bmwoo_bitnetmarket_logo', BMWOO_BITNETMARKET_URL . 'assets/images/icon.png');
             $this->has_fields = false;
             $this->supports = array('products');
@@ -38,10 +38,10 @@ if (class_exists('WC_Payment_Gateway') && !class_exists('WC_Gateway_Bitnetmarket
             add_action('admin_notices', array($this, 'admin_notice_missing_seller_id'));
 
             $this->messages = array(
-                'waiting' => __('در انتظار پرداخت', 'bitnetmarket-payment-gateway-for-woocommerce'),
-                'expired' => __('پرداخت منقضی شده', 'bitnetmarket-payment-gateway-for-woocommerce'),
-                'failed' => __('پرداخت ناموفق', 'bitnetmarket-payment-gateway-for-woocommerce'),
-                'finished' => __('پرداخت موفق', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                'waiting' => __('در انتظار پرداخت', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
+                'expired' => __('پرداخت منقضی شده', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
+                'failed' => __('پرداخت ناموفق', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
+                'finished' => __('پرداخت موفق', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
             );
         }
 
@@ -50,46 +50,46 @@ if (class_exists('WC_Payment_Gateway') && !class_exists('WC_Gateway_Bitnetmarket
                 'BMWOO_Bitnetmarket_Config',
                 array(
                     'enabled' => array(
-                        'title' => __('فعالسازی/غیرفعالسازی', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                        'title' => __('فعالسازی/غیرفعالسازی', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                         'type' => 'checkbox',
-                        'label' => __('فعالسازی درگاه بیت‌نت‌مارکت', 'bitnetmarket-payment-gateway-for-woocommerce'),
-                        'description' => __('برای فعالسازی درگاه پرداخت بیت‌نت‌مارکت باید چک باکس را تیک بزنید', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                        'label' => __('فعالسازی درگاه بیت‌نت‌مارکت', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
+                        'description' => __('برای فعالسازی درگاه پرداخت بیت‌نت‌مارکت باید چک باکس را تیک بزنید', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                         'default' => 'yes',
                         'desc_tip' => true,
                     ),
                     'title' => array(
-                        'title' => __('عنوان درگاه', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                        'title' => __('عنوان درگاه', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                         'type' => 'text',
-                        'description' => __('عنوان درگاه که در طی خرید به مشتری نمایش داده میشود', 'bitnetmarket-payment-gateway-for-woocommerce'),
-                        'default' => __('بیت‌نت‌مارکت', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                        'description' => __('عنوان درگاه که در طی خرید به مشتری نمایش داده میشود', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
+                        'default' => __('بیت‌نت‌مارکت', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                         'desc_tip' => true,
                     ),
                     'description' => array(
-                        'title' => __('توضیحات درگاه', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                        'title' => __('توضیحات درگاه', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                         'type' => 'textarea',
-                        'description' => __('توضیحاتی که در طی عملیات پرداخت برای درگاه نمایش داده خواهد شد', 'bitnetmarket-payment-gateway-for-woocommerce'),
-                        'default' => __('پرداخت امن از طریق درگاه بیت‌نت‌مارکت', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                        'description' => __('توضیحاتی که در طی عملیات پرداخت برای درگاه نمایش داده خواهد شد', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
+                        'default' => __('پرداخت امن از طریق درگاه بیت‌نت‌مارکت', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                         'desc_tip' => true,
                     ),
                     'seller_id' => array(
-                        'title' => __('شناسه فروشنده (Seller ID)', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                        'title' => __('شناسه فروشنده (Seller ID)', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                         'type' => 'text',
-                        'description' => __('شناسه فروشنده از seller.bitnetmarket.com', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                        'description' => __('شناسه فروشنده از seller.bitnetmarket.com', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                         'default' => '',
                         'desc_tip' => true,
                         'placeholder' => 'مثال: s6nkcg'
                     ),
                     'success_message' => array(
-                        'title' => __('پیام پرداخت موفق', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                        'title' => __('پیام پرداخت موفق', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                         'type' => 'textarea',
-                        'description' => __('متن پیامی که می‌خواهید بعد از پرداخت موفق به کاربر نمایش دهید را وارد نمایید . همچنین می‌توانید از شورت کد {uuid} برای نمایش شناسه یکتا استفاده نمایید .', 'bitnetmarket-payment-gateway-for-woocommerce'),
-                        'default' => __('<a href="https://bitnetmarket.com/pay/{uuid}">{uuid}</a>\nبا تشکر از شما. سفارش شما با موفقیت پرداخت شد', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                        'description' => __('متن پیامی که می‌خواهید بعد از پرداخت موفق به کاربر نمایش دهید را وارد نمایید . همچنین می‌توانید از شورت کد {uuid} برای نمایش شناسه یکتا استفاده نمایید .', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
+                        'default' => __('<a href="https://bitnetmarket.com/pay/{uuid}">{uuid}</a>\nبا تشکر از شما. سفارش شما با موفقیت پرداخت شد', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                     ),
                     'failed_message' => array(
-                        'title' => __('پیام پرداخت ناموفق', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                        'title' => __('پیام پرداخت ناموفق', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                         'type' => 'textarea',
-                        'description' => __('متن پیامی که می‌خواهید بعد از پرداخت ناموفق به کاربر نمایش دهید را وارد نمایید . همچنین می‌توانید از شورت کد {uuid} برای نمایش شناسه یکتا استفاده نمایید .', 'bitnetmarket-payment-gateway-for-woocommerce'),
-                        'default' => __('<a href="https://bitnetmarket.com/pay/{uuid}">{uuid}</a>\nپرداخت شما ناموفق بوده است . لطفاً مجدداً تلاش نمایید یا در صورت بروز اشکال با مدیر سایت تماس بگیرید', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                        'description' => __('متن پیامی که می‌خواهید بعد از پرداخت ناموفق به کاربر نمایش دهید را وارد نمایید . همچنین می‌توانید از شورت کد {uuid} برای نمایش شناسه یکتا استفاده نمایید .', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
+                        'default' => __('<a href="https://bitnetmarket.com/pay/{uuid}">{uuid}</a>\nپرداخت شما ناموفق بوده است . لطفاً مجدداً تلاش نمایید یا در صورت بروز اشکال با مدیر سایت تماس بگیرید', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                     ),
                 )
             );
@@ -134,7 +134,7 @@ if (class_exists('WC_Payment_Gateway') && !class_exists('WC_Gateway_Bitnetmarket
             $amount = apply_filters('woocommerce_order_amount_total_Bitnetmarket_gateway', $amount, $currency);
 
             if ($amount <= 0) {
-                wc_add_notice(__('مبلغ نامعتبر', 'bitnetmarket-payment-gateway-for-woocommerce'), 'error');
+                wc_add_notice(__('مبلغ نامعتبر', 'payment-gateway-with-bitnetmarket-for-woocommerce'), 'error');
                 return;
             }
 
@@ -158,23 +158,23 @@ if (class_exists('WC_Payment_Gateway') && !class_exists('WC_Gateway_Bitnetmarket
 
                 update_post_meta($order_id, '_bitnetmarket_uuid', $uuid);
                 // translators: %s is the UUID.
-                $order->add_order_note(sprintf(__('پرداخت به درگاه بیت‌نت‌مارکت ارسال شد. UUID: %s', 'bitnetmarket-payment-gateway-for-woocommerce'), $uuid));
+                $order->add_order_note(sprintf(__('پرداخت به درگاه بیت‌نت‌مارکت ارسال شد. UUID: %s', 'payment-gateway-with-bitnetmarket-for-woocommerce'), $uuid));
 
                 wp_redirect($pay_url);
                 exit;
             } else {
                 $message = $response['detail'] ?? 'نامشخص';
                 // translators: %s is the error message.
-                $order->add_order_note(sprintf(__('خطا در ایجاد پرداخت: %s', 'bitnetmarket-payment-gateway-for-woocommerce'), $message));
+                $order->add_order_note(sprintf(__('خطا در ایجاد پرداخت: %s', 'payment-gateway-with-bitnetmarket-for-woocommerce'), $message));
                 // translators: %s is the error message.
-                wc_add_notice(sprintf(__('خطا در اتصال به درگاه: %s', 'bitnetmarket-payment-gateway-for-woocommerce'), $message), 'error');
+                wc_add_notice(sprintf(__('خطا در اتصال به درگاه: %s', 'payment-gateway-with-bitnetmarket-for-woocommerce'), $message), 'error');
             }
         }
 
         public function return_from_bitnetmarket_gateway() {
             // Verify nonce for security
             if ( ! isset( $_GET['nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['nonce'] ) ), 'bitnetmarket_verify' ) ) {
-                wp_die( esc_html__( 'امنیت: nonce نامعتبر', 'bitnetmarket-payment-gateway-for-woocommerce' ) );
+                wp_die( esc_html__( 'امنیت: nonce نامعتبر', 'payment-gateway-with-bitnetmarket-for-woocommerce' ) );
             }
 
             $order_id = isset($_GET['wc_order']) ? intval($_GET['wc_order']) : 0;
@@ -196,23 +196,23 @@ if (class_exists('WC_Payment_Gateway') && !class_exists('WC_Gateway_Bitnetmarket
 
             $uuid = get_post_meta($order_id, '_bitnetmarket_uuid', true);
             if (!$uuid) {
-                $order->update_status('failed', __('شناسه یکتا یافت نشد', 'bitnetmarket-payment-gateway-for-woocommerce'));
-                wc_add_notice(__('شناسه یکتا یافت نشد', 'bitnetmarket-payment-gateway-for-woocommerce'), 'error');
+                $order->update_status('failed', __('شناسه یکتا یافت نشد', 'payment-gateway-with-bitnetmarket-for-woocommerce'));
+                wc_add_notice(__('شناسه یکتا یافت نشد', 'payment-gateway-with-bitnetmarket-for-woocommerce'), 'error');
                 wp_redirect(wc_get_checkout_url());
                 exit;
             }
 
             $status_response = $this->check_payment_status($uuid);
             if (!$status_response || !isset($status_response['status'])) {
-                $order->update_status('failed', __('خطا در بررسی وضعیت', 'bitnetmarket-payment-gateway-for-woocommerce'));
-                wc_add_notice(__('خطا در بررسی وضعیت پرداخت', 'bitnetmarket-payment-gateway-for-woocommerce'), 'error');
+                $order->update_status('failed', __('خطا در بررسی وضعیت', 'payment-gateway-with-bitnetmarket-for-woocommerce'));
+                wc_add_notice(__('خطا در بررسی وضعیت پرداخت', 'payment-gateway-with-bitnetmarket-for-woocommerce'), 'error');
                 wp_redirect(wc_get_checkout_url());
                 exit;
             }
 
             $payment_status = $status_response['status'];
             // translators: %s is the status message.
-            $order->add_order_note(sprintf(__('وضعیت پرداخت: %s', 'bitnetmarket-payment-gateway-for-woocommerce'), $this->get_status_message($payment_status)));
+            $order->add_order_note(sprintf(__('وضعیت پرداخت: %s', 'payment-gateway-with-bitnetmarket-for-woocommerce'), $this->get_status_message($payment_status)));
 
             if ($payment_status === 'finished') {
                 update_post_meta($order_id, '_transaction_id', $uuid);
@@ -220,7 +220,7 @@ if (class_exists('WC_Payment_Gateway') && !class_exists('WC_Gateway_Bitnetmarket
                 WC()->cart->empty_cart();
 
                 // translators: %s is the UUID.
-                $note = sprintf(__('پرداخت موفقیت آمیز بود. شناسه یکتا: %s', 'bitnetmarket-payment-gateway-for-woocommerce'), $uuid);
+                $note = sprintf(__('پرداخت موفقیت آمیز بود. شناسه یکتا: %s', 'payment-gateway-with-bitnetmarket-for-woocommerce'), $uuid);
                 $order->add_order_note($note, 1);
 
                 $notice = wpautop(wptexturize($this->success_message));
@@ -306,7 +306,7 @@ if (class_exists('WC_Payment_Gateway') && !class_exists('WC_Gateway_Bitnetmarket
         }
 
         private function get_status_message($status) {
-            return isset($this->messages[$status]) ? $this->messages[$status] : __('وضعیت نامشخص', 'bitnetmarket-payment-gateway-for-woocommerce');
+            return isset($this->messages[$status]) ? $this->messages[$status] : __('وضعیت نامشخص', 'payment-gateway-with-bitnetmarket-for-woocommerce');
         }
 
         private function log_error($message) {
@@ -341,7 +341,7 @@ if (class_exists('WC_Payment_Gateway') && !class_exists('WC_Gateway_Bitnetmarket
             if (empty($seller_id) && 'yes' === $this->settings['enabled']) {
                 $message = sprintf(
                     // translators: %s is the admin settings URL.
-                    __('شناسه فروشنده بیت‌نت‌مارکت خالی است. <a href="%s">اینجا</a> تنظیم کنید.', 'bitnetmarket-payment-gateway-for-woocommerce'),
+                    __('شناسه فروشنده بیت‌نت‌مارکت خالی است. <a href="%s">اینجا</a> تنظیم کنید.', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
                     esc_url(admin_url('admin.php?page=wc-settings&tab=checkout&section=bitnetmarket'))
                 );
                 echo '<div class="notice notice-warning is-dismissible"><p>' . esc_html($message) . '</p></div>';
