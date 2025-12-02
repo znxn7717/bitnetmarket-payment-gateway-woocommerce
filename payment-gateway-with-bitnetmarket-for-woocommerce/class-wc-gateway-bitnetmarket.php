@@ -22,11 +22,11 @@ if (class_exists('WC_Payment_Gateway') && !class_exists('WC_Gateway_Bitnetmarket
             $this->init_form_fields();
             $this->init_settings();
 
-            $this->title = $this->settings['title'];
-            $this->description = $this->settings['description'];
-            $this->seller_id = $this->settings['seller_id'];
-            $this->success_message = $this->settings['success_message'];
-            $this->failed_message = $this->settings['failed_message'];
+            $this->title = $this->get_option('title');
+            $this->description = $this->get_option('description');
+            $this->seller_id = $this->get_option('seller_id');
+            $this->success_message = $this->get_option('success_message');
+            $this->failed_message  = $this->get_option('failed_message');
 
             if (version_compare(WOOCOMMERCE_VERSION, '2.0.0', '>=')) {
                 add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
@@ -337,8 +337,8 @@ if (class_exists('WC_Payment_Gateway') && !class_exists('WC_Gateway_Bitnetmarket
         }
 
         public function admin_notice_missing_seller_id() {
-            $seller_id = $this->settings['seller_id'];
-            if (empty($seller_id) && 'yes' === $this->settings['enabled']) {
+            $seller_id = $this->get_option('seller_id');
+            if (empty($seller_id) && 'yes' === $this->get_option('enabled')) {
                 $message = sprintf(
                     // translators: %s is the admin settings URL.
                     __('شناسه فروشنده بیت‌نت‌مارکت خالی است. <a href="%s">اینجا</a> تنظیم کنید.', 'payment-gateway-with-bitnetmarket-for-woocommerce'),
